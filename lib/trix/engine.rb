@@ -2,6 +2,9 @@ module Trix
   class Engine < ::Rails::Engine
     initializer 'trix.view_helpers' do
       ActiveSupport.on_load(:action_view) do
+        Rails.logger.info '*' * 80
+        Rails.logger.info 'requiring trix/form'
+        Rails.logger.info '*' * 80
         require 'trix/form'
       end
 
